@@ -42,18 +42,15 @@ export const SceneNodeSchema = z.object({
 export type SceneNode = z.infer<typeof SceneNodeSchema>;
 
 // --- Camera ---
-export const SpringConfigSchema = z.object({
-  mass: z.number().default(1),
-  damping: z.number().default(14),
-  stiffness: z.number().default(90),
-});
+export const MotionPresetSchema = z.enum(["smooth_glide", "aggressive_snap", "gentle_float"]);
+export type MotionPreset = z.infer<typeof MotionPresetSchema>;
 
 export const CameraWaypointSchema = z.object({
   frameStart: z.number(),
   targetX: z.number(),
   targetY: z.number(),
   targetZoom: z.number(),
-  springConfig: SpringConfigSchema,
+  motionPreset: MotionPresetSchema.default("smooth_glide"),
 });
 
 export const CameraPathSchema = z.object({

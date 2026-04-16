@@ -40,7 +40,10 @@ app.post('/api/render', async (req, res) => {
     // command: npx remotion render src/index.tsx MyVideo out.mp4 --props=/tmp/render_props.json
     const cliProcess = spawn('npx', [
         'remotion', 'render', 'src/index.tsx', 'MyVideo', outPath, `--props=${tmpPath}`
-    ], { stdio: 'inherit' });
+    ], { 
+      stdio: 'inherit',
+      shell: true 
+    });
 
     cliProcess.on('close', (code) => {
       // Release the lock

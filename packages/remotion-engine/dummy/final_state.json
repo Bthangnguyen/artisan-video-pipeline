@@ -34,22 +34,14 @@
         "targetX": 0,
         "targetY": 0,
         "targetZoom": 1,
-        "springConfig": {
-          "mass": 1,
-          "damping": 14,
-          "stiffness": 90
-        }
+        "motionPreset": "smooth_glide"
       },
       {
         "frameStart": 90,
         "targetX": 100,
         "targetY": -50,
         "targetZoom": 1.2,
-        "springConfig": {
-          "mass": 1,
-          "damping": 10,
-          "stiffness": 80
-        }
+        "motionPreset": "aggressive_snap"
       }
     ]
   }

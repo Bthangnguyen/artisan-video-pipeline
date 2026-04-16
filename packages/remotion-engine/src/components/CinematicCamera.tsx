@@ -22,17 +22,19 @@ export const CinematicCamera: React.FC<{ camera: CameraPath; children: React.Rea
   const waypoint = camera.waypoints[activeWaypointIndex];
   const prevWaypoint = activeWaypointIndex > 0 ? camera.waypoints[activeWaypointIndex - 1] : camera.waypoints[0];
 
-  const springConfig = waypoint.springConfig;
   const startFrame = waypoint.frameStart;
   
+  // Map MotionPreset to spring physics
+  const motionConfig = {
+    aggressive_snap: { damping: 12, stiffness: 120, mass: 1 },
+    smooth_glide: { damping: 20, stiffness: 60, mass: 1 },
+    gentle_float: { damping: 25, stiffness: 30, mass: 1 },
+  }[waypoint.motionPreset || "smooth_glide"];
+
   const progress = spring({
     frame: frame - startFrame,
     fps,
-    config: {
-      damping: springConfig.damping,
-      mass: springConfig.mass,
-      stiffness: springConfig.stiffness,
-    },
+    config: motionConfig,
   });
 
   // Calculate the target values based on the progress of the spring

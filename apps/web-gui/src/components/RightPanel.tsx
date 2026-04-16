@@ -16,27 +16,16 @@ export const RightPanel = () => {
           <h4>Waypoint {i + 1} (Start: {wp.frameStart})</h4>
           
           <label style={{ display: 'block', marginBottom: 5 }}>
-            Damping:<br/>
-            <input 
-              type="range" 
-              min="1" max="50" 
-              value={wp.springConfig.damping} 
-              onChange={e => updateCameraWaypoint(i, { springConfig: { ...wp.springConfig, damping: parseInt(e.target.value) } })}
-              style={{ width: '100%' }}
-            />
-            {wp.springConfig.damping}
-          </label>
-
-          <label style={{ display: 'block' }}>
-            Stiffness:<br/>
-            <input 
-              type="range" 
-              min="10" max="200" 
-              value={wp.springConfig.stiffness} 
-              onChange={e => updateCameraWaypoint(i, { springConfig: { ...wp.springConfig, stiffness: parseInt(e.target.value) } })}
-              style={{ width: '100%' }}
-            />
-            {wp.springConfig.stiffness}
+            Motion Preset:<br/>
+            <select 
+              value={wp.motionPreset || "smooth_glide"} 
+              onChange={e => updateCameraWaypoint(i, { motionPreset: e.target.value as any })}
+              style={{ width: '100%', padding: '5px' }}
+            >
+              <option value="smooth_glide">Smooth Glide</option>
+              <option value="aggressive_snap">Aggressive Snap</option>
+              <option value="gentle_float">Gentle Float</option>
+            </select>
           </label>
         </div>
       ))}
