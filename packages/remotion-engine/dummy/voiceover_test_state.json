@@ -1,0 +1,65 @@
+{
+  "projectId": "vietnamese_voiceover_test",
+  "globalConfig": {
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "backgroundColor": "#020617"
+  },
+  "audioTrack": {
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "durationInFrames": 300
+  },
+  "nodes": [
+    {
+      "id": "intro_node",
+      "text": "Chào mừng bạn đến với hệ thống Artisan",
+      "assetId": "rocket",
+      "spatialData": { "x": 540, "y": 960, "scale": 1.0 },
+      "timing": { "startFrame": 0, "baseDuration": 150, "offsetFrames": 0 },
+      "wordTimings": [
+        { "text": "Chào", "startFrame": 15, "duration": 15 },
+        { "text": "mừng", "startFrame": 30, "duration": 15 },
+        { "text": "bạn", "startFrame": 45, "duration": 15 },
+        { "text": "đến", "startFrame": 60, "duration": 15 },
+        { "text": "với", "startFrame": 75, "duration": 15 },
+        { "text": "hệ", "startFrame": 90, "duration": 15 },
+        { "text": "thống", "startFrame": 105, "duration": 15 },
+        { "text": "Artisan", "startFrame": 120, "duration": 30 }
+      ]
+    },
+    {
+      "id": "action_node",
+      "text": "Hãy cùng kiến tạo tương lai",
+      "assetId": "trophy",
+      "spatialData": { "x": 540, "y": 960, "scale": 1.0 },
+      "timing": { "startFrame": 150, "baseDuration": 150, "offsetFrames": 0 },
+      "wordTimings": [
+        { "text": "Hãy", "startFrame": 10, "duration": 20 },
+        { "text": "cùng", "startFrame": 30, "duration": 20 },
+        { "text": "kiến", "startFrame": 50, "duration": 20 },
+        { "text": "tạo", "startFrame": 70, "duration": 20 },
+        { "text": "tương", "startFrame": 90, "duration": 20 },
+        { "text": "lai", "startFrame": 110, "duration": 30 }
+      ]
+    }
+  ],
+  "camera": {
+    "waypoints": [
+      {
+        "frameStart": 0,
+        "targetX": 0,
+        "targetY": 0,
+        "targetZoom": 1,
+        "motionPreset": "smooth_glide"
+      },
+      {
+        "frameStart": 150,
+        "targetX": 0,
+        "targetY": -50,
+        "targetZoom": 1.2,
+        "motionPreset": "aggressive_snap"
+      }
+    ]
+  }
+}

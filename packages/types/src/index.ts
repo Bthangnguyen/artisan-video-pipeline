@@ -31,12 +31,21 @@ export const TimingSchema = z.object({
   offsetFrames: z.number().default(0),
 });
 
+export const WordTimingSchema = z.object({
+  text: z.string(),
+  startFrame: z.number(),
+  duration: z.number(),
+});
+
+export type WordTiming = z.infer<typeof WordTimingSchema>;
+
 export const SceneNodeSchema = z.object({
   id: z.string(),
   text: z.string(),
   assetId: z.string(), // Maps to the SVG Enum in @artisan/assets
   spatialData: SpatialDataSchema,
   timing: TimingSchema,
+  wordTimings: z.array(WordTimingSchema).optional(),
 });
 
 export type SceneNode = z.infer<typeof SceneNodeSchema>;

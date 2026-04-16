@@ -1,24 +1,25 @@
 import React from "react";
 import { Sequence, useVideoConfig } from "remotion";
-import type { SceneNode, ValidAssetId } from "@artisan/types";
-import { SvgAssetId } from "@artisan/assets";
+import type { SceneNode } from "@artisan/types";
+import { SvgAssetId, SVG_PATHS } from "@artisan/assets";
 
-// A dummy component for SVG assets for now
+// Renders a high-fidelity SVG path based on the assetId
 const SvgAsset: React.FC<{ id: string }> = ({ id }) => {
+  const path = SVG_PATHS[id] || SVG_PATHS['star'];
   return (
-    <div style={{ padding: 20, backgroundColor: 'white', borderRadius: 10, marginBottom: 10, color: 'black' }}>
-      Asset: {id}
-    </div>
+    <svg 
+      viewBox="0 0 16 16" 
+      width="120" 
+      height="120" 
+      fill="#e11d48"
+      style={{ filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.3))", marginBottom: 20 }}
+    >
+      <path d={path} />
+    </svg>
   );
 };
 
-const Subtitle: React.FC<{ text: string }> = ({ text }) => {
-  return (
-    <div style={{ fontSize: 40, color: "white", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
-      {text}
-    </div>
-  );
-};
+import { TextAnimator } from "./TextAnimator";
 
 export const NodeRenderer: React.FC<{ nodes: SceneNode[] }> = ({ nodes }) => {
   return (
@@ -40,11 +41,12 @@ export const NodeRenderer: React.FC<{ nodes: SceneNode[] }> = ({ nodes }) => {
                 transform: `translate(-50%, -50%) scale(${node.spatialData.scale})`,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center"
+                alignItems: "center",
+                width: "100%"
               }}
             >
               <SvgAsset id={node.assetId} />
-              <Subtitle text={node.text} />
+              <TextAnimator text={node.text} wordTimings={node.wordTimings} />
             </div>
           </Sequence>
         );

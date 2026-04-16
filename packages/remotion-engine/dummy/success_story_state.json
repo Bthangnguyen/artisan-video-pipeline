@@ -1,0 +1,75 @@
+{
+  "projectId": "success_steps_10s",
+  "globalConfig": {
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "backgroundColor": "#020617"
+  },
+  "audioTrack": {
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "durationInFrames": 300
+  },
+  "nodes": [
+    {
+      "id": "step1",
+      "text": "Bước 1: Bắt đầu ngay",
+      "assetId": "rocket",
+      "spatialData": { "x": 540, "y": 960, "scale": 1.2 },
+      "timing": { "startFrame": 0, "baseDuration": 75, "offsetFrames": 0 }
+    },
+    {
+      "id": "step2",
+      "text": "Bước 2: Kiên trì mỗi ngày",
+      "assetId": "infinite",
+      "spatialData": { "x": 540, "y": 960, "scale": 1.2 },
+      "timing": { "startFrame": 75, "baseDuration": 90, "offsetFrames": 0 }
+    },
+    {
+      "id": "step3",
+      "text": "Bước 3: Không bỏ cuộc",
+      "assetId": "mountain",
+      "spatialData": { "x": 540, "y": 960, "scale": 1.2 },
+      "timing": { "startFrame": 165, "baseDuration": 90, "offsetFrames": 0 }
+    },
+    {
+      "id": "final",
+      "text": "THÀNH CÔNG SẼ ĐẾN!",
+      "assetId": "trophy",
+      "spatialData": { "x": 540, "y": 960, "scale": 1.5 },
+      "timing": { "startFrame": 255, "baseDuration": 45, "offsetFrames": 0 }
+    }
+  ],
+  "camera": {
+    "waypoints": [
+      {
+        "frameStart": 0,
+        "targetX": 0,
+        "targetY": 0,
+        "targetZoom": 1,
+        "motionPreset": "smooth_glide"
+      },
+      {
+        "frameStart": 75,
+        "targetX": 0,
+        "targetY": 50,
+        "targetZoom": 1.1,
+        "motionPreset": "aggressive_snap"
+      },
+      {
+        "frameStart": 165,
+        "targetX": 0,
+        "targetY": 0,
+        "targetZoom": 1.2,
+        "motionPreset": "smooth_glide"
+      },
+      {
+        "frameStart": 255,
+        "targetX": 0,
+        "targetY": -100,
+        "targetZoom": 1.5,
+        "motionPreset": "gentle_float"
+      }
+    ]
+  }
+}
