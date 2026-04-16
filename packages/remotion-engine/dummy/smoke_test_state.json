@@ -1,0 +1,635 @@
+{
+  "projectId": "f9a0f49d-20a3-478b-938e-d90520a26205",
+  "globalConfig": {
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "backgroundColor": "#020617"
+  },
+  "audioTrack": {
+    "url": "./public/smoke_voiceover.mp3",
+    "durationInFrames": 863
+  },
+  "nodes": [
+    {
+      "id": "node-beat-1",
+      "text": "You are watching this because you want to change.",
+      "assetId": "eye",
+      "spatialData": {
+        "x": 540,
+        "y": 960,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 2,
+        "baseDuration": 96,
+        "offsetFrames": 2
+      },
+      "wordTimings": [
+        {
+          "text": "You",
+          "startFrame": 0,
+          "duration": 3
+        },
+        {
+          "text": "are",
+          "startFrame": 5,
+          "duration": 3
+        },
+        {
+          "text": "watching",
+          "startFrame": 9,
+          "duration": 10
+        },
+        {
+          "text": "this",
+          "startFrame": 21,
+          "duration": 5
+        },
+        {
+          "text": "because",
+          "startFrame": 27,
+          "duration": 8
+        },
+        {
+          "text": "you",
+          "startFrame": 36,
+          "duration": 3
+        },
+        {
+          "text": "want",
+          "startFrame": 41,
+          "duration": 6
+        },
+        {
+          "text": "to",
+          "startFrame": 48,
+          "duration": 2
+        },
+        {
+          "text": "change",
+          "startFrame": 51,
+          "duration": 15
+        }
+      ]
+    },
+    {
+      "id": "node-beat-2",
+      "text": "You might be holding a self-help book right now.",
+      "assetId": "book",
+      "spatialData": {
+        "x": 1240,
+        "y": 1260,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 68,
+        "baseDuration": 92,
+        "offsetFrames": 2
+      },
+      "wordTimings": [
+        {
+          "text": "You",
+          "startFrame": 0,
+          "duration": 8
+        },
+        {
+          "text": "might",
+          "startFrame": 8,
+          "duration": 6
+        },
+        {
+          "text": "be",
+          "startFrame": 14,
+          "duration": 2
+        },
+        {
+          "text": "holding",
+          "startFrame": 16,
+          "duration": 11
+        },
+        {
+          "text": "a",
+          "startFrame": 27,
+          "duration": 1
+        },
+        {
+          "text": "self",
+          "startFrame": 29,
+          "duration": 8
+        },
+        {
+          "text": "help",
+          "startFrame": 37,
+          "duration": 5
+        },
+        {
+          "text": "book",
+          "startFrame": 42,
+          "duration": 7
+        },
+        {
+          "text": "right",
+          "startFrame": 49,
+          "duration": 8
+        },
+        {
+          "text": "now",
+          "startFrame": 57,
+          "duration": 5
+        }
+      ]
+    },
+    {
+      "id": "node-beat-3",
+      "text": "You might have just saved dozens of videos on how to build discipline, how to plan your life, or how to wake up at 5 AM.",
+      "assetId": "eye",
+      "spatialData": {
+        "x": 1940,
+        "y": 1560,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 130,
+        "baseDuration": 221,
+        "offsetFrames": 2
+      },
+      "wordTimings": [
+        {
+          "text": "You",
+          "startFrame": 0,
+          "duration": 11
+        },
+        {
+          "text": "might",
+          "startFrame": 17,
+          "duration": 7
+        },
+        {
+          "text": "have",
+          "startFrame": 24,
+          "duration": 5
+        },
+        {
+          "text": "just",
+          "startFrame": 29,
+          "duration": 4
+        },
+        {
+          "text": "saved",
+          "startFrame": 33,
+          "duration": 9
+        },
+        {
+          "text": "dozens",
+          "startFrame": 42,
+          "duration": 12
+        },
+        {
+          "text": "of",
+          "startFrame": 54,
+          "duration": 3
+        },
+        {
+          "text": "videos",
+          "startFrame": 57,
+          "duration": 11
+        },
+        {
+          "text": "on",
+          "startFrame": 68,
+          "duration": 7
+        },
+        {
+          "text": "how",
+          "startFrame": 75,
+          "duration": 4
+        },
+        {
+          "text": "to",
+          "startFrame": 81,
+          "duration": 2
+        },
+        {
+          "text": "build",
+          "startFrame": 83,
+          "duration": 8
+        },
+        {
+          "text": "discipline",
+          "startFrame": 91,
+          "duration": 16
+        },
+        {
+          "text": "how",
+          "startFrame": 107,
+          "duration": 8
+        },
+        {
+          "text": "to",
+          "startFrame": 115,
+          "duration": 9
+        },
+        {
+          "text": "plan",
+          "startFrame": 124,
+          "duration": 5
+        },
+        {
+          "text": "your",
+          "startFrame": 131,
+          "duration": 6
+        },
+        {
+          "text": "life",
+          "startFrame": 139,
+          "duration": 3
+        },
+        {
+          "text": "or",
+          "startFrame": 144,
+          "duration": 6
+        },
+        {
+          "text": "how",
+          "startFrame": 150,
+          "duration": 11
+        },
+        {
+          "text": "to",
+          "startFrame": 166,
+          "duration": 4
+        },
+        {
+          "text": "wake",
+          "startFrame": 172,
+          "duration": 6
+        },
+        {
+          "text": "up",
+          "startFrame": 178,
+          "duration": 4
+        },
+        {
+          "text": "at",
+          "startFrame": 182,
+          "duration": 4
+        },
+        {
+          "text": "5",
+          "startFrame": 186,
+          "duration": 2
+        },
+        {
+          "text": "AM",
+          "startFrame": 188,
+          "duration": 3
+        }
+      ]
+    },
+    {
+      "id": "node-beat-4",
+      "text": "And you think that if you just watch one more video, read one more book, everything will finally click into place.",
+      "assetId": "eye",
+      "spatialData": {
+        "x": 2640,
+        "y": 1860,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 323,
+        "baseDuration": 257,
+        "offsetFrames": 2
+      },
+      "wordTimings": [
+        {
+          "text": "And",
+          "startFrame": 0,
+          "duration": 11
+        },
+        {
+          "text": "you",
+          "startFrame": 15,
+          "duration": 16
+        },
+        {
+          "text": "think",
+          "startFrame": 41,
+          "duration": 7
+        },
+        {
+          "text": "that",
+          "startFrame": 48,
+          "duration": 7
+        },
+        {
+          "text": "if",
+          "startFrame": 55,
+          "duration": 3
+        },
+        {
+          "text": "you",
+          "startFrame": 59,
+          "duration": 2
+        },
+        {
+          "text": "just",
+          "startFrame": 61,
+          "duration": 6
+        },
+        {
+          "text": "watch",
+          "startFrame": 67,
+          "duration": 7
+        },
+        {
+          "text": "one",
+          "startFrame": 74,
+          "duration": 5
+        },
+        {
+          "text": "more",
+          "startFrame": 79,
+          "duration": 11
+        },
+        {
+          "text": "video",
+          "startFrame": 90,
+          "duration": 9
+        },
+        {
+          "text": "read",
+          "startFrame": 99,
+          "duration": 7
+        },
+        {
+          "text": "one",
+          "startFrame": 106,
+          "duration": 12
+        },
+        {
+          "text": "more",
+          "startFrame": 125,
+          "duration": 8
+        },
+        {
+          "text": "book",
+          "startFrame": 135,
+          "duration": 7
+        },
+        {
+          "text": "everything",
+          "startFrame": 142,
+          "duration": 38
+        },
+        {
+          "text": "will",
+          "startFrame": 180,
+          "duration": 4
+        },
+        {
+          "text": "finally",
+          "startFrame": 184,
+          "duration": 8
+        },
+        {
+          "text": "click",
+          "startFrame": 192,
+          "duration": 18
+        },
+        {
+          "text": "into",
+          "startFrame": 210,
+          "duration": 9
+        },
+        {
+          "text": "place",
+          "startFrame": 219,
+          "duration": 8
+        }
+      ]
+    },
+    {
+      "id": "node-beat-5",
+      "text": "Wrong.",
+      "assetId": "cross",
+      "spatialData": {
+        "x": 3340,
+        "y": 2160,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 550,
+        "baseDuration": 40,
+        "offsetFrames": 2
+      },
+      "wordTimings": [
+        {
+          "text": "Wrong",
+          "startFrame": 0,
+          "duration": 10
+        }
+      ]
+    },
+    {
+      "id": "node-beat-6",
+      "text": "I spent 10,000 hours—more than 6 years of my life—digging through almost everything in the so-called self-improvement industry.",
+      "assetId": "eye",
+      "spatialData": {
+        "x": 4040,
+        "y": 2460,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 560,
+        "baseDuration": 333,
+        "offsetFrames": 2
+      },
+      "wordTimings": [
+        {
+          "text": "I",
+          "startFrame": 0,
+          "duration": 4
+        },
+        {
+          "text": "spent",
+          "startFrame": 4,
+          "duration": 44
+        },
+        {
+          "text": "10,000",
+          "startFrame": 48,
+          "duration": 52
+        },
+        {
+          "text": "hours",
+          "startFrame": 100,
+          "duration": 12
+        },
+        {
+          "text": "more",
+          "startFrame": 112,
+          "duration": 16
+        },
+        {
+          "text": "than",
+          "startFrame": 128,
+          "duration": 9
+        },
+        {
+          "text": "6",
+          "startFrame": 137,
+          "duration": 2
+        },
+        {
+          "text": "years",
+          "startFrame": 139,
+          "duration": 17
+        },
+        {
+          "text": "of",
+          "startFrame": 156,
+          "duration": 2
+        },
+        {
+          "text": "my",
+          "startFrame": 159,
+          "duration": 2
+        },
+        {
+          "text": "life",
+          "startFrame": 161,
+          "duration": 18
+        },
+        {
+          "text": "digging",
+          "startFrame": 179,
+          "duration": 13
+        },
+        {
+          "text": "through",
+          "startFrame": 192,
+          "duration": 23
+        },
+        {
+          "text": "almost",
+          "startFrame": 215,
+          "duration": 8
+        },
+        {
+          "text": "everything",
+          "startFrame": 223,
+          "duration": 16
+        },
+        {
+          "text": "in",
+          "startFrame": 239,
+          "duration": 3
+        },
+        {
+          "text": "the",
+          "startFrame": 242,
+          "duration": 11
+        },
+        {
+          "text": "so",
+          "startFrame": 253,
+          "duration": 2
+        },
+        {
+          "text": "called",
+          "startFrame": 255,
+          "duration": 8
+        },
+        {
+          "text": "self",
+          "startFrame": 263,
+          "duration": 6
+        },
+        {
+          "text": "improvement",
+          "startFrame": 269,
+          "duration": 19
+        },
+        {
+          "text": "industry",
+          "startFrame": 291,
+          "duration": 12
+        }
+      ]
+    }
+  ],
+  "camera": {
+    "waypoints": [
+      {
+        "frameStart": 10,
+        "targetX": 0,
+        "targetY": 0,
+        "targetZoom": 0.8,
+        "motionPreset": "smooth_glide"
+      },
+      {
+        "frameStart": 76,
+        "targetX": 700,
+        "targetY": 300,
+        "targetZoom": 1.7,
+        "motionPreset": "smooth_glide"
+      },
+      {
+        "frameStart": 138,
+        "targetX": 1400,
+        "targetY": 600,
+        "targetZoom": 1.4,
+        "motionPreset": "gentle_float"
+      },
+      {
+        "frameStart": 331,
+        "targetX": 2100,
+        "targetY": 900,
+        "targetZoom": 2,
+        "motionPreset": "gentle_float"
+      },
+      {
+        "frameStart": 558,
+        "targetX": 2800,
+        "targetY": 1200,
+        "targetZoom": 0.8,
+        "motionPreset": "smooth_glide"
+      },
+      {
+        "frameStart": 568,
+        "targetX": 3500,
+        "targetY": 1500,
+        "targetZoom": 1.7,
+        "motionPreset": "smooth_glide"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "id": "edge-1",
+      "source": "node-beat-1",
+      "target": "node-beat-2"
+    },
+    {
+      "id": "edge-2",
+      "source": "node-beat-2",
+      "target": "node-beat-3"
+    },
+    {
+      "id": "edge-3",
+      "source": "node-beat-3",
+      "target": "node-beat-4"
+    },
+    {
+      "id": "edge-4",
+      "source": "node-beat-4",
+      "target": "node-beat-5"
+    },
+    {
+      "id": "edge-5",
+      "source": "node-beat-5",
+      "target": "node-beat-6"
+    }
+  ]
+}

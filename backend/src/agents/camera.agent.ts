@@ -1,36 +1,22 @@
 import { Agent } from "./agent.interface";
-import { CameraWaypoint } from "../schemas/project-state.schema";
+import { CameraService } from "../services/camera.service";
+import { LlmService } from "../services/llm.service";
 import { ProjectRepository } from "../storage/project.repository";
 
 export class CameraAgent implements Agent {
-  constructor(private readonly repository: ProjectRepository) {}
+  constructor(
+    private readonly repository: ProjectRepository,
+    private readonly llmService = new LlmService(),
+    private readonly cameraService = new CameraService(),
+  ) {}
 
   async run(projectId: string): Promise<void> {
     const project = await this.repository.requireById(projectId);
-    project.cameraWaypoints = this.buildWaypoints(project.fps, project.beats, project.nodes);
+    const cameraPlan = this.llmService.planCamera(project.beats, project.beatTimings);
+
+    project.cameraPlan = cameraPlan;
+    project.cameraWaypoints = this.cameraService.buildWaypoints(project, cameraPlan);
+
     await this.repository.save(project);
-  }
-
-  private buildWaypoints(
-    fps: number,
-    beats: Array<{ text: string }>,
-    nodes: Array<{ x: number; y: number }>,
-  ): CameraWaypoint[] {
-    let frameCursor = 0;
-
-    return beats.map((beat, index) => {
-      const node = nodes[index] ?? { x: 0, y: index * 180 };
-      const wordCount = beat.text.split(/\s+/).filter(Boolean).length;
-      const beatDurationInFrames = Math.max(fps, Math.round(wordCount * (fps * 0.35)));
-      const waypoint: CameraWaypoint = {
-        frameStart: frameCursor,
-        targetX: node.x,
-        targetY: node.y,
-        targetZoom: Number((1 + (index % 3) * 0.12).toFixed(2)),
-      };
-
-      frameCursor += beatDurationInFrames;
-      return waypoint;
-    });
   }
 }

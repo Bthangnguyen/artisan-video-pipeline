@@ -25,14 +25,15 @@ export const TextAnimator: React.FC<TextAnimatorProps> = ({ text, wordTimings })
       display: "flex", 
       flexWrap: "wrap", 
       justifyContent: "center", 
-      gap: "15px",
-      fontSize: 80,
+      gap: "12px",
+      fontSize: 50,
       fontWeight: "900",
       color: "white",
       textShadow: "0 6px 12px rgba(0,0,0,0.6)",
       textTransform: "uppercase",
-      width: "80%",
-      textAlign: "center"
+      width: "480px",
+      textAlign: "center",
+      wordBreak: "break-word"
     }}>
       {wordTimings.map((word, i) => {
         const start = word.startFrame;

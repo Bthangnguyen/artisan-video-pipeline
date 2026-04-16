@@ -3,11 +3,11 @@ import { ProjectStatus } from "./project-status.enum";
 export const orderedProjectStatuses: readonly ProjectStatus[] = [
   ProjectStatus.DRAFT,
   ProjectStatus.SCRIPT_READY,
-  ProjectStatus.VOICE_READY,
-  ProjectStatus.LAYOUT_READY,
   ProjectStatus.VISUAL_READY,
-  ProjectStatus.CAMERA_READY,
+  ProjectStatus.LAYOUT_READY,
+  ProjectStatus.VOICE_READY,
   ProjectStatus.PACING_READY,
+  ProjectStatus.CAMERA_READY,
   ProjectStatus.READY_FOR_REVIEW,
   ProjectStatus.RENDERED,
 ];

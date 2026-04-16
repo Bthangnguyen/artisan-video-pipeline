@@ -10,10 +10,14 @@ export class VoiceAgent implements Agent {
 
   async run(projectId: string): Promise<void> {
     const project = await this.repository.requireById(projectId);
-    const synthesis = this.ttsService.synthesize(projectId, project.script);
+    const synthesis = await this.ttsService.synthesize(projectId, project.beats, project.fps);
 
     project.audioPath = synthesis.audioPath;
+    project.spokenScript = synthesis.spokenScript;
+    project.beats = synthesis.beats;
+    project.beatTimings = synthesis.beatTimings;
     project.words = synthesis.words;
+    project.ttsChunks = synthesis.ttsChunks;
 
     await this.repository.save(project);
   }

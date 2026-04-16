@@ -69,12 +69,21 @@ export const CameraPathSchema = z.object({
 export type CameraWaypoint = z.infer<typeof CameraWaypointSchema>;
 export type CameraPath = z.infer<typeof CameraPathSchema>;
 
+export const EdgeSchema = z.object({
+  id: z.string(),
+  source: z.string(),
+  target: z.string(),
+});
+
+export type Edge = z.infer<typeof EdgeSchema>;
+
 // --- Global State ---
 export const ProjectStateSchema = z.object({
   projectId: z.string(),
   globalConfig: GlobalConfigSchema,
   audioTrack: AudioTrackSchema,
   nodes: z.array(SceneNodeSchema),
+  edges: z.array(EdgeSchema).optional(),
   camera: CameraPathSchema,
 });
 

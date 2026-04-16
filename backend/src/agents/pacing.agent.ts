@@ -7,8 +7,12 @@ export class PacingAgent implements Agent {
   async run(projectId: string): Promise<void> {
     const project = await this.repository.requireById(projectId);
     project.pacing = {
-      offsetFrames: 0,
+      defaultOffsetFrames: 2,
     };
+    project.beatTimings = project.beatTimings.map((timing) => ({
+      ...timing,
+      offsetFrames: project.pacing.defaultOffsetFrames,
+    }));
 
     await this.repository.save(project);
   }

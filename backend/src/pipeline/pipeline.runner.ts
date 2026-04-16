@@ -27,24 +27,24 @@ export class PipelineRunner {
         agent: new ScriptAgent(this.repository),
       },
       {
-        nextStatus: ProjectStatus.VOICE_READY,
-        agent: new VoiceAgent(this.repository),
+        nextStatus: ProjectStatus.VISUAL_READY,
+        agent: new VisualAgent(this.repository),
       },
       {
         nextStatus: ProjectStatus.LAYOUT_READY,
         agent: new LayoutAgent(this.repository),
       },
       {
-        nextStatus: ProjectStatus.VISUAL_READY,
-        agent: new VisualAgent(this.repository),
-      },
-      {
-        nextStatus: ProjectStatus.CAMERA_READY,
-        agent: new CameraAgent(this.repository),
+        nextStatus: ProjectStatus.VOICE_READY,
+        agent: new VoiceAgent(this.repository),
       },
       {
         nextStatus: ProjectStatus.PACING_READY,
         agent: new PacingAgent(this.repository),
+      },
+      {
+        nextStatus: ProjectStatus.CAMERA_READY,
+        agent: new CameraAgent(this.repository),
       },
     ];
   }
@@ -70,7 +70,7 @@ export class PipelineRunner {
 
     project = await this.repository.requireById(projectId);
 
-    if (project.status === ProjectStatus.PACING_READY) {
+    if (project.status === ProjectStatus.CAMERA_READY) {
       this.assertNextTransition(project.status, ProjectStatus.READY_FOR_REVIEW);
       project.status = ProjectStatus.READY_FOR_REVIEW;
       await this.repository.save(project);
@@ -83,15 +83,15 @@ export class PipelineRunner {
         return 0;
       case ProjectStatus.SCRIPT_READY:
         return 1;
-      case ProjectStatus.VOICE_READY:
+      case ProjectStatus.VISUAL_READY:
         return 2;
       case ProjectStatus.LAYOUT_READY:
         return 3;
-      case ProjectStatus.VISUAL_READY:
+      case ProjectStatus.VOICE_READY:
         return 4;
-      case ProjectStatus.CAMERA_READY:
-        return 5;
       case ProjectStatus.PACING_READY:
+        return 5;
+      case ProjectStatus.CAMERA_READY:
       case ProjectStatus.READY_FOR_REVIEW:
       case ProjectStatus.RENDERED:
         return this.stages.length;

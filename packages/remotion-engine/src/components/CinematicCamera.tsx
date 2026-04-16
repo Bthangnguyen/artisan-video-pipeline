@@ -24,12 +24,13 @@ export const CinematicCamera: React.FC<{ camera: CameraPath; children: React.Rea
 
   const startFrame = waypoint.frameStart;
   
-  // Map MotionPreset to spring physics
+  // Map MotionPreset to spring physics (Dark Needle Style)
+  // Camera feels like a physical object with mass, creating a deliberate overshoot and settle.
   const motionConfig = {
-    aggressive_snap: { damping: 12, stiffness: 120, mass: 1 },
-    smooth_glide: { damping: 20, stiffness: 60, mass: 1 },
-    gentle_float: { damping: 25, stiffness: 30, mass: 1 },
-  }[waypoint.motionPreset || "smooth_glide"];
+    aggressive_snap: { damping: 14, stiffness: 90, mass: 0.9 },
+    smooth_glide: { damping: 18, stiffness: 70, mass: 0.9 }, // Dramatic reveal style
+    gentle_float: { damping: 20, stiffness: 60, mass: 1 },
+  }[waypoint.motionPreset || "aggressive_snap"];
 
   const progress = spring({
     frame: frame - startFrame,
@@ -37,10 +38,19 @@ export const CinematicCamera: React.FC<{ camera: CameraPath; children: React.Rea
     config: motionConfig,
   });
 
-  // Calculate the target values based on the progress of the spring
   const x = prevWaypoint.targetX + (waypoint.targetX - prevWaypoint.targetX) * progress;
   const y = prevWaypoint.targetY + (waypoint.targetY - prevWaypoint.targetY) * progress;
   const zoom = prevWaypoint.targetZoom + (waypoint.targetZoom - prevWaypoint.targetZoom) * progress;
+
+  // Real-time faux-velocity calculation to simulate motion blur
+  // progress will typically overshoot or change rapidly during transitive frames
+  // We can approximate velocity by looking at the derivative of the spring progress,
+  // but a simpler method in Remotion is to check if progress is between 0 and 0.8
+  const isMoving = progress > 0.05 && progress < 0.95 && activeWaypointIndex > 0;
+  
+  // Apply a small blur during fast movements (aggressive snap)
+  const isAggressive = waypoint.motionPreset === "aggressive_snap";
+  const blurAmount = isMoving && isAggressive ? 4 : (isMoving ? 2 : 0);
 
   return (
     <div
@@ -52,6 +62,9 @@ export const CinematicCamera: React.FC<{ camera: CameraPath; children: React.Rea
         height: '100%',
         transform: `scale(${zoom}) translate(${-x}px, ${-y}px)`,
         transformOrigin: "center center",
+        willChange: "transform, filter",
+        filter: `blur(${blurAmount}px)`,
+        transition: "filter 0.1s linear" // Smooth out the blur
       }}
     >
       {children}
