@@ -52,6 +52,10 @@ export const TextAnimator: React.FC<TextAnimatorProps> = ({ text, wordTimings })
         const translateY = interpolate(pop, [0, 1], [30, 0]);
         const scale = interpolate(pop, [0, 1], [0.8, 1]);
 
+        // Highlight logic
+        const isActive = frame >= start && frame < start + word.duration;
+        const color = isActive ? "#fbbf24" : "white"; // Yellow highlight
+
         return (
           <span
             key={`${word.text}-${i}`}
@@ -59,6 +63,8 @@ export const TextAnimator: React.FC<TextAnimatorProps> = ({ text, wordTimings })
               display: "inline-block",
               opacity,
               transform: `translateY(${translateY}px) scale(${scale})`,
+              color,
+              transition: "color 0.1s"
             }}
           >
             {word.text}
