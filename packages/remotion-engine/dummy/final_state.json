@@ -1,0 +1,56 @@
+{
+  "projectId": "dummy_proj_123",
+  "globalConfig": {
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "backgroundColor": "#1a1a2e"
+  },
+  "audioTrack": {
+    "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "durationInFrames": 300
+  },
+  "nodes": [
+    {
+      "id": "beat_1",
+      "text": "Hello Artisan",
+      "assetId": "broken_heart",
+      "spatialData": {
+        "x": 540,
+        "y": 960,
+        "scale": 1
+      },
+      "timing": {
+        "startFrame": 30,
+        "baseDuration": 60,
+        "offsetFrames": 0
+      }
+    }
+  ],
+  "camera": {
+    "waypoints": [
+      {
+        "frameStart": 0,
+        "targetX": 0,
+        "targetY": 0,
+        "targetZoom": 1,
+        "springConfig": {
+          "mass": 1,
+          "damping": 14,
+          "stiffness": 90
+        }
+      },
+      {
+        "frameStart": 90,
+        "targetX": 100,
+        "targetY": -50,
+        "targetZoom": 1.2,
+        "springConfig": {
+          "mass": 1,
+          "damping": 10,
+          "stiffness": 80
+        }
+      }
+    ]
+  }
+}
