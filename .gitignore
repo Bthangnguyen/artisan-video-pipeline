@@ -6,12 +6,15 @@ yarn-error.log*
 
 # node_modules
 node_modules/
+backend/node_modules/
 packages/*/node_modules/
 apps/*/node_modules/
 
 # build outputs
 dist/
 build/
+data/
+backend/data/
 apps/web-gui/.next/
 apps/web-gui/out/
 packages/remotion-engine/out.mp4
